@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Phone, Mail, MapPin, Plus } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,10 +10,12 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2 group inline-block">
-              <div className="bg-primary/10 p-2 rounded-lg group-hover:bg-primary/20 transition-colors inline-flex">
-                <Plus className="w-6 h-6 text-primary" />
-              </div>
+            <Link href="/" className="flex items-center gap-3 group inline-flex" data-testid="link-footer-logo">
+              <img
+                src="/pms-logo.png"
+                alt="Peters Medicare Services"
+                className="h-16 w-16 object-contain"
+              />
               <div className="flex flex-col">
                 <span className="font-serif font-bold text-lg leading-none text-foreground">Peters Medicare</span>
                 <span className="text-xs text-muted-foreground uppercase tracking-widest font-semibold">Services</span>

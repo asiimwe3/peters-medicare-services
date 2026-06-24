@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { Plus, Menu, X, Phone, HeartPulse } from "lucide-react";
+import { Menu, X, HeartPulse } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -37,10 +37,12 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="bg-primary/10 p-2 rounded-lg group-hover:bg-primary/20 transition-colors">
-              <Plus className="w-6 h-6 text-primary" />
-            </div>
+          <Link href="/" className="flex items-center gap-2 group" data-testid="link-logo-home">
+            <img
+              src="/pms-logo.png"
+              alt="Peters Medicare Services"
+              className="h-14 w-14 object-contain"
+            />
             <div className="flex flex-col">
               <span className="font-serif font-bold text-lg leading-none text-foreground">Peters Medicare</span>
               <span className="text-xs text-muted-foreground uppercase tracking-widest font-semibold">Services</span>
