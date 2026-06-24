@@ -5,6 +5,8 @@ import { ArrowRight, Phone, MessageCircle, Clock, MapPin, CheckCircle, ShieldChe
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { useLanguage } from "@/context/LanguageContext";
+import { t } from "@/data/translations";
 
 import heroImg from "@/assets/images/hero.png";
 
@@ -24,6 +26,8 @@ const stagger = {
 };
 
 export function Home() {
+  const { lang } = useLanguage();
+
   useEffect(() => {
     document.title = "Peters Medicare Services | Quality Healthcare in Kyenjojo, Uganda";
   }, []);
@@ -45,22 +49,22 @@ export function Home() {
                 Licensed by Ministry of Health
               </motion.div>
               <motion.h1 variants={fadeIn} className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground leading-tight mb-6">
-                Quality, Affordable & Patient-Centered Healthcare
+                {t("hero.title", lang)}
               </motion.h1>
               <motion.p variants={fadeIn} className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-                Serving Kyenjojo, Kyegegwa, Kibaale and the Rwenzori region since 2013. Trusted, professional, and built for every family.
+                {t("hero.subtitle", lang)}
               </motion.p>
               <motion.div variants={fadeIn} className="flex flex-wrap items-center gap-4">
                 <Button asChild size="lg" className="h-14 px-8 text-base">
                   <a href="tel:+256776004277" className="flex items-center gap-2">
                     <Phone className="w-5 h-5" />
-                    Call Now: 0776 004 277
+                    {t("hero.call", lang)}
                   </a>
                 </Button>
                 <Button asChild variant="secondary" size="lg" className="h-14 px-8 text-base">
                   <a href="https://wa.me/256776004277" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                     <MessageCircle className="w-5 h-5" />
-                    Book via WhatsApp
+                    {t("hero.whatsapp", lang)}
                   </a>
                 </Button>
               </motion.div>

@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { HeartHandshake, BookOpen, BrainCircuit, Users, Baby, Droplet } from "lucide-react";
 import outreachHeroImg from "@/assets/images/outreach-hero.png";
+import { OutreachCalendar } from "@/components/sections/OutreachCalendar";
 
 export function Outreach() {
   useEffect(() => {
@@ -136,6 +137,17 @@ export function Outreach() {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+        </div>
+      </section>
+
+      {/* Upcoming Events Calendar */}
+      <section className="py-20 bg-card border-t">
+        <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Upcoming Programs & Events</h2>
+            <p className="text-lg text-muted-foreground">Join us at one of our upcoming free community health drives.</p>
+          </div>
+          <OutreachCalendar />
         </div>
       </section>
 

@@ -1,8 +1,11 @@
 import { Link } from "wouter";
 import { Phone, MapPin } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
+import { t } from "@/data/translations";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const { lang } = useLanguage();
 
   return (
     <footer className="bg-card border-t pt-16 pb-8">
@@ -22,20 +25,20 @@ export function Footer() {
               </div>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mt-4">
-              Quality, Affordable & Patient-Centered Healthcare serving Kyenjojo, Kyegegwa, Kibaale, and the Rwenzori region.
+              {t("footer.tagline", lang)}
             </p>
           </div>
 
           <div>
-            <h3 className="font-serif font-semibold text-lg mb-4">Quick Links</h3>
+            <h3 className="font-serif font-semibold text-lg mb-4">{t("footer.quickLinks", lang)}</h3>
             <ul className="space-y-3">
               {[
-                { name: "Home", path: "/" },
-                { name: "About Us", path: "/about" },
-                { name: "Our Services", path: "/services" },
-                { name: "Community Outreach", path: "/outreach" },
-                { name: "Pricing", path: "/pricing" },
-                { name: "Health Blog", path: "/blog" },
+                { name: t("nav.home", lang), path: "/" },
+                { name: t("nav.about", lang), path: "/about" },
+                { name: t("nav.services", lang), path: "/services" },
+                { name: t("nav.outreach", lang), path: "/outreach" },
+                { name: t("nav.pricing", lang), path: "/pricing" },
+                { name: t("nav.blog", lang), path: "/blog" },
               ].map((link) => (
                 <li key={link.path}>
                   <Link href={link.path} className="text-muted-foreground hover:text-primary transition-colors text-sm">
@@ -47,19 +50,18 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-serif font-semibold text-lg mb-4">Services</h3>
+            <h3 className="font-serif font-semibold text-lg mb-4">{t("footer.services", lang)}</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li>General Medical Consultation</li>
-              <li>Maternal & Antenatal Care</li>
-              <li>Laboratory Diagnostics & Ultrasound</li>
-              <li>Dental & Eye Care</li>
-              <li>HIV Testing & Counseling</li>
-              <li>Community Health Screenings</li>
+              <li>{t("services.medical", lang)}</li>
+              <li>{t("services.maternal", lang)}</li>
+              <li>{t("services.diagnostics", lang)}</li>
+              <li>{t("services.specialized", lang)}</li>
+              <li>{t("services.outreach", lang)}</li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-serif font-semibold text-lg mb-4">Contact Us</h3>
+            <h3 className="font-serif font-semibold text-lg mb-4">{t("footer.contact", lang)}</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm text-muted-foreground">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
@@ -80,9 +82,9 @@ export function Footer() {
         <div className="border-t pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
           <p>© {currentYear} Peters Medicare Services. All rights reserved.</p>
           <div className="flex items-center gap-4">
-            <span>Established 2013</span>
+            <span>{t("footer.established", lang)}</span>
             <span>•</span>
-            <span>Licensed by Ministry of Health Uganda</span>
+            <span>{t("footer.licensed", lang)}</span>
           </div>
         </div>
       </div>

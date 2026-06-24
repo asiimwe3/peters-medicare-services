@@ -1,13 +1,16 @@
 import { Link, useLocation } from "wouter";
-import { Menu, X, HeartPulse, Heart } from "lucide-react";
+import { Menu, X, HeartPulse, Heart, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
+import { t } from "@/data/translations";
 
 export function Navbar() {
   const [location] = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { lang, setLang } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,19 +21,23 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Services", path: "/services" },
-    { name: "Outreach", path: "/outreach" },
-    { name: "Pricing", path: "/pricing" },
-    { name: "Blog", path: "/blog" },
-    { name: "Contact", path: "/contact" },
+    { name: t("nav.home", lang), path: "/" },
+    { name: t("nav.about", lang), path: "/about" },
+    { name: t("nav.services", lang), path: "/services" },
+    { name: t("nav.outreach", lang), path: "/outreach" },
+    { name: t("nav.pricing", lang), path: "/pricing" },
+    { name: t("nav.blog", lang), path: "/blog" },
+    { name: t("nav.contact", lang), path: "/contact" },
   ];
   const isDonate = location === "/donate";
 
+  const toggleLanguage = () => {
+    setLang(lang === 'en' ? 'rn' : 'en');
+  };
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`transition-all duration-300 ${
         isScrolled
           ? "bg-white/90 backdrop-blur-md shadow-sm dark:bg-card/90"
           : "bg-white dark:bg-card"
@@ -51,7 +58,11 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-1 lg:gap-2">
+          <nav className="hidden md:flex items-center gap-1 lg:gap-2 ml-auto mr-4">
+            <Button variant="ghost" size="sm" onClick={toggleLanguage} className="gap-2 font-bold px-2" data-testid="button-lang-toggle">
+              <Globe className="w-4 h-4" />
+              <span>{lang === 'en' ? 'EN' : 'RN'}</span>
+            </Button>
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -71,13 +82,13 @@ export function Navbar() {
             <Button asChild variant="outline" size="sm" className={`gap-1.5 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground ${isDonate ? "bg-secondary text-secondary-foreground" : ""}`}>
               <Link href="/donate" data-testid="link-nav-donate">
                 <Heart className="w-4 h-4" />
-                Donate
+                {t("nav.donate", lang)}
               </Link>
             </Button>
             <Button asChild variant="default" className="shadow-sm">
               <a href="https://wa.me/256776004277" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 <HeartPulse className="w-4 h-4" />
-                Book via WhatsApp
+                {t("nav.book", lang)}
               </a>
             </Button>
           </div>
@@ -118,15 +129,19 @@ export function Navbar() {
                 </Link>
               ))}
               <div className="pt-4 mt-2 border-t flex flex-col gap-3">
+                <Button variant="outline" className="w-full justify-center gap-2 font-bold" onClick={toggleLanguage} data-testid="button-lang-toggle-mobile">
+                  <Globe className="w-4 h-4" />
+                  {lang === 'en' ? 'Switch to Runyoro' : 'Switch to English'} ( {lang === 'en' ? 'EN' : 'RN'} )
+                </Button>
                 <Button asChild variant="outline" className="w-full justify-center gap-2 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground">
                   <Link href="/donate" onClick={() => setIsMobileMenuOpen(false)} data-testid="link-mobile-donate">
                     <Heart className="w-4 h-4" />
-                    Donate
+                    {t("nav.donate", lang)}
                   </Link>
                 </Button>
                 <Button asChild className="w-full justify-center">
                   <a href="https://wa.me/256776004277" target="_blank" rel="noopener noreferrer">
-                    Book via WhatsApp
+                    {t("nav.book", lang)}
                   </a>
                 </Button>
               </div>
