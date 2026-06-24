@@ -1,0 +1,62 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "h0Aq9ymth154GqjbPTLKY"
+uri = "file://artifacts/peters-medicare/src/assets/images/hero.png"
+type = "image"
+title = "Hero Clinic Interior"
+
+[[generated]]
+id = "trq8nGvBffyfH8HZNDBmR"
+uri = "file://artifacts/peters-medicare/src/assets/images/outreach.png"
+type = "image"
+title = "Community Outreach Uganda"
+
+[[generated]]
+id = "_wlwknBBxlETYUX0KXvVP"
+uri = "file://artifacts/peters-medicare/src/assets/images/service-medical.png"
+type = "image"
+title = "Medical Consultation"
+
+[[generated]]
+id = "bJ66G2iytJsN7-_7iiCCh"
+uri = "file://artifacts/peters-medicare/src/assets/images/service-maternal.png"
+type = "image"
+title = "Antenatal Visit"
+
+[[generated]]
+id = "JVB5Po5QpDxqcMLTgGgYU"
+uri = "file://artifacts/peters-medicare/src/assets/images/service-lab.png"
+type = "image"
+title = "Lab Technician"
+
+[[generated]]
+id = "6uXZapdOT8Iysr9r0YPbi"
+uri = "file://artifacts/peters-medicare/src/assets/images/service-dental.png"
+type = "image"
+title = "Dental Exam"
+
+[[generated]]
+id = "6swh-4R4YdN-oLOfXE4mO"
+uri = "file://artifacts/peters-medicare/src/assets/images/outreach-hero.png"
+type = "image"
+title = "Community Health Day"
+
+[[generated]]
+id = "XveghCB03LZRnW8NxJeTg"
+uri = "file://artifacts/peters-medicare/src/assets/images/blog-malaria.png"
+type = "image"
+title = "Blog Malaria"
+
+[[generated]]
+id = "d9eeWcbz7UqDranJ2kAup"
+uri = "file://artifacts/peters-medicare/src/assets/images/blog-antenatal.png"
+type = "image"
+title = "Blog Antenatal"
+
+[[generated]]
+id = "rQePiVJCyZyCfMF56LKVR"
+uri = "file://artifacts/peters-medicare/src/assets/images/blog-community.png"
+type = "image"
+title = "Blog Community"

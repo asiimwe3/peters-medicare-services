@@ -1,0 +1,231 @@
+You are a senior full-stack developer, UI/UX designer, and SEO specialist.
+
+Your task is to design and develop a modern, responsive, and high-converting healthcare website for a clinic named:
+
+Peters Medicare Services (located in Kyenjojo, Uganda)
+
+---
+
+🎯 OBJECTIVE
+
+Build a clean, fast, mobile-first website that:
+
+- Clearly communicates healthcare services
+- Builds trust with patients
+- Encourages bookings and calls
+- Is optimized for SEO and local discovery
+
+---
+
+🏗️ WEBSITE STRUCTURE
+
+Create the following pages:
+
+1. Home
+2. About Us
+3. Services
+4. Community Outreach
+5. Pricing
+6. Contact
+7. Blog / Health Tips (SEO-focused)
+
+---
+
+🎨 DESIGN REQUIREMENTS
+
+- Style: Clean, modern medical UI (inspired by private clinics)
+- Colors: Blue, white, and green (trust + healthcare feel)
+- Typography: Simple, readable (sans-serif)
+- Fully responsive (mobile-first)
+- Use cards, icons, and clear sections
+
+---
+
+🧩 CORE SECTIONS & CONTENT
+
+HERO SECTION
+
+- Title: “Quality, Affordable & Patient-Centered Healthcare”
+- CTA Buttons:
+  - “Call Now”
+  - “Book Appointment (WhatsApp)”
+- Contact:
+  - 0776 004 277 / 0778 989 221
+- Location:
+  - Kyenjojo Town (200m along Kyenjojo–Kagadi Road)
+
+---
+
+ABOUT SECTION
+
+Include:
+
+- Established August 2013
+- Fully registered medical clinic
+- Serves Kyenjojo, Kyegegwa, Kibaale, Rwenzori region
+- Emphasize affordability + professionalism
+
+---
+
+VISION & MISSION
+
+- Vision: Be the leading private healthcare provider through innovation and quality care
+- Mission: Provide affordable, patient-centered healthcare
+
+---
+
+SERVICES SECTION
+
+Group into categories:
+
+1. Medical Services
+   
+   - General treatment
+   - Minor surgeries
+   - Inpatient / outpatient
+
+2. Maternal Health
+   
+   - Antenatal
+   - Delivery
+   - Family planning
+
+3. Diagnostics
+   
+   - Laboratory
+   - Ultrasound
+
+4. Specialized
+   
+   - Dental
+   - Eye care
+   - HIV testing
+
+5. Outreach
+   
+   - Community programs
+   - Free screenings
+
+---
+
+WHY CHOOSE US
+
+Highlight:
+
+- 12+ years experience
+- Licensed and certified
+- Affordable pricing
+- Modern equipment
+- Trusted partnerships
+
+---
+
+COMMUNITY IMPACT
+
+Include stats:
+
+- 400+ circumcisions
+- 120+ cancer screenings
+- HIV testing programs
+- Maternal outreach campaigns
+
+---
+
+NGO SECTION
+
+Add:
+Community Health Empowerment Initiatives Uganda (CHEIU)
+
+Focus on:
+
+- Youth empowerment
+- HIV prevention
+- Mental health awareness
+- Community development
+
+---
+
+PRICING SECTION
+
+Show sample pricing:
+
+- Consultation: UGX 5,000
+- Antenatal: UGX 10,000
+- Delivery: UGX 50,000
+- Ultrasound: From UGX 20,000
+
+Include CTA:
+👉 “View Full Price List”
+
+---
+
+CONTACT PAGE
+
+Include:
+
+- Phone numbers
+- Location map (Google Maps embed)
+- Contact form
+- Business details
+
+---
+
+⚙️ FUNCTIONAL REQUIREMENTS
+
+- Sticky call button (mobile)
+- WhatsApp booking integration
+- Fast loading speed
+- SEO optimization:
+  - Keywords: “Clinic in Kyenjojo”, “Affordable healthcare Uganda”
+- Meta tags + structured data
+- Google Maps integration
+
+---
+
+🚀 TECH STACK (RECOMMENDED)
+
+Frontend:
+
+- React / Next.js OR HTML + Tailwind CSS
+
+Backend:
+
+- Node.js / Firebase (optional for forms)
+
+Extras:
+
+- WhatsApp API integration
+- Simple CMS or editable sections
+
+---
+
+🔥 CONVERSION OPTIMIZATION
+
+- Add testimonials section
+- Add trust badges (licensed, partners)
+- Use real images (clinic, staff)
+- Highlight statistics (numbers build trust)
+
+---
+
+📦 FINAL DELIVERABLES
+
+- Fully responsive website
+- Clean UI design
+- SEO-optimized structure
+- Fast performance
+- Ready for deployment
+
+---
+
+⚠️ IMPORTANT
+
+- Always use the correct brand name:
+  Peters Medicare Services (NOT “St. Peters”)
+- Keep UI simple and professional
+- Optimize for low-bandwidth environments (important for Uganda users)
+
+---
+
+Build the project as if it will go live for real patients.
+Focus on clarity, trust, and usability above all.
