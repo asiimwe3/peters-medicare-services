@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { Menu, X, HeartPulse } from "lucide-react";
+import { Menu, X, HeartPulse, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -26,6 +26,7 @@ export function Navbar() {
     { name: "Blog", path: "/blog" },
     { name: "Contact", path: "/contact" },
   ];
+  const isDonate = location === "/donate";
 
   return (
     <header
@@ -66,7 +67,13 @@ export function Navbar() {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-2">
+            <Button asChild variant="outline" size="sm" className={`gap-1.5 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground ${isDonate ? "bg-secondary text-secondary-foreground" : ""}`}>
+              <Link href="/donate" data-testid="link-nav-donate">
+                <Heart className="w-4 h-4" />
+                Donate
+              </Link>
+            </Button>
             <Button asChild variant="default" className="shadow-sm">
               <a href="https://wa.me/256776004277" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 <HeartPulse className="w-4 h-4" />
@@ -110,7 +117,13 @@ export function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              <div className="pt-4 mt-2 border-t">
+              <div className="pt-4 mt-2 border-t flex flex-col gap-3">
+                <Button asChild variant="outline" className="w-full justify-center gap-2 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground">
+                  <Link href="/donate" onClick={() => setIsMobileMenuOpen(false)} data-testid="link-mobile-donate">
+                    <Heart className="w-4 h-4" />
+                    Donate
+                  </Link>
+                </Button>
                 <Button asChild className="w-full justify-center">
                   <a href="https://wa.me/256776004277" target="_blank" rel="noopener noreferrer">
                     Book via WhatsApp
