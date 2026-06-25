@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useSEO } from "@/hooks/use-seo";
 import { motion } from "framer-motion";
 import { CalendarDays, Clock, Phone, User, Stethoscope, MessageCircle, CheckCircle, AlertCircle, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -39,9 +40,11 @@ export function Book() {
     notes: "",
   });
 
-  useEffect(() => {
-    document.title = "Book Appointment | Peters Medicare Services";
-  }, []);
+  useSEO({
+    title: "Book an Appointment | Peters Medicare Services Kyenjojo",
+    description: "Book a medical appointment at Peters Medicare Services in Kyenjojo, Uganda. Choose your service, preferred date and time. Confirmed by our team within 24 hours.",
+    canonical: "https://medicare-services-hub-1--derickasiimwe84.replit.app/book",
+  });
 
   const set = (field: string, value: string) =>
     setForm((prev) => ({ ...prev, [field]: value }));
