@@ -26,7 +26,7 @@ export function Outreach() {
       {/* Hero */}
       <section className="relative pt-20 pb-32 overflow-hidden bg-primary text-primary-foreground">
         <div className="absolute inset-0 z-0 opacity-20 mix-blend-overlay">
-          <img src={outreachHeroImg} alt="Community Outreach" className="w-full h-full object-cover" />
+          <img src={outreachHeroImg} alt="Community Outreach" loading="lazy" decoding="async" className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/40 z-10" />
         

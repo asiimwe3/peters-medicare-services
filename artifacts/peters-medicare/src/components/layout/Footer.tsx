@@ -8,7 +8,7 @@ export function Footer() {
   const { lang } = useLanguage();
 
   return (
-    <footer className="bg-card border-t pt-16 pb-8">
+    <footer role="contentinfo" className="bg-card border-t pt-16 pb-8">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           
@@ -17,6 +17,8 @@ export function Footer() {
               <img
                 src="/pms-logo.png"
                 alt="Peters Medicare Services"
+                loading="lazy"
+                decoding="async"
                 className="h-16 w-16 object-contain"
               />
               <div className="flex flex-col">
@@ -29,7 +31,7 @@ export function Footer() {
             </p>
           </div>
 
-          <div>
+          <nav aria-label="Footer navigation">
             <h3 className="font-serif font-semibold text-lg mb-4">{t("footer.quickLinks", lang)}</h3>
             <ul className="space-y-3">
               {[
@@ -39,6 +41,7 @@ export function Footer() {
                 { name: t("nav.outreach", lang), path: "/outreach" },
                 { name: t("nav.pricing", lang), path: "/pricing" },
                 { name: t("nav.blog", lang), path: "/blog" },
+                { name: "FAQ", path: "/faq" },
               ].map((link) => (
                 <li key={link.path}>
                   <Link href={link.path} className="text-muted-foreground hover:text-primary transition-colors text-sm">
@@ -47,7 +50,7 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           <div>
             <h3 className="font-serif font-semibold text-lg mb-4">{t("footer.services", lang)}</h3>

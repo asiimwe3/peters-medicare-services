@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { Menu, X, HeartPulse, Heart, Globe } from "lucide-react";
+import { Menu, X, HeartPulse, Heart, Globe, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -27,12 +27,17 @@ export function Navbar() {
     { name: t("nav.outreach", lang), path: "/outreach" },
     { name: t("nav.pricing", lang), path: "/pricing" },
     { name: t("nav.blog", lang), path: "/blog" },
+    { name: "FAQ", path: "/faq" },
     { name: t("nav.contact", lang), path: "/contact" },
   ];
   const isDonate = location === "/donate";
 
   const toggleLanguage = () => {
     setLang(lang === 'en' ? 'rn' : 'en');
+  };
+
+  const openSearch = () => {
+    window.dispatchEvent(new CustomEvent("open-search"));
   };
 
   return (
@@ -44,11 +49,13 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between h-20">
+        <nav aria-label="Main navigation" className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center gap-2 group" data-testid="link-logo-home">
             <img
               src="/pms-logo.png"
               alt="Peters Medicare Services"
+              loading="lazy"
+              decoding="async"
               className="h-14 w-14 object-contain"
             />
             <div className="flex flex-col">
@@ -58,7 +65,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-1 lg:gap-2 ml-auto mr-4">
+          <div className="hidden md:flex items-center gap-1 lg:gap-2 ml-auto mr-4">
             <Button variant="ghost" size="sm" onClick={toggleLanguage} className="gap-2 font-bold px-2" data-testid="button-lang-toggle">
               <Globe className="w-4 h-4" />
               <span>{lang === 'en' ? 'EN' : 'RN'}</span>
@@ -67,6 +74,7 @@ export function Navbar() {
               <Link
                 key={link.path}
                 href={link.path}
+                aria-current={location === link.path ? "page" : undefined}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors hover:text-primary ${
                   location === link.path
                     ? "text-primary bg-primary/5"
@@ -76,9 +84,13 @@ export function Navbar() {
                 {link.name}
               </Link>
             ))}
-          </nav>
+          </div>
 
           <div className="hidden md:flex items-center gap-2">
+            <Button variant="ghost" size="icon" onClick={openSearch} className="text-muted-foreground hover:text-primary" aria-label="Open search" data-testid="button-search-open">
+              <Search className="w-5 h-5" />
+              <span className="sr-only">Search</span>
+            </Button>
             <Button asChild variant="outline" size="sm" className={`gap-1.5 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground ${isDonate ? "bg-secondary text-secondary-foreground" : ""}`}>
               <Link href="/donate" data-testid="link-nav-donate">
                 <Heart className="w-4 h-4" />
@@ -94,14 +106,20 @@ export function Navbar() {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <button
-            className="md:hidden p-2 text-foreground"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
+          <div className="md:hidden flex items-center gap-2">
+            <Button variant="ghost" size="icon" onClick={openSearch} className="text-muted-foreground" aria-label="Open search" data-testid="button-search-open-mobile">
+              <Search className="w-5 h-5" />
+            </Button>
+            <button
+              className="p-2 text-foreground"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMobileMenuOpen}
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+        </nav>
       </div>
 
       {/* Mobile Nav */}
@@ -113,11 +131,12 @@ export function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-background border-b"
           >
-            <nav className="flex flex-col p-4 space-y-2">
+            <div className="flex flex-col p-4 space-y-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   href={link.path}
+                  aria-current={location === link.path ? "page" : undefined}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`px-4 py-3 rounded-md text-base font-medium transition-colors ${
                     location === link.path
@@ -145,7 +164,7 @@ export function Navbar() {
                   </a>
                 </Button>
               </div>
-            </nav>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

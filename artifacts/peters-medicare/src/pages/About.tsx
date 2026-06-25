@@ -115,7 +115,7 @@ export function About() {
               viewport={{ once: true }}
               className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]"
             >
-              <img src={outreachImg} alt="CHEIU Community Outreach" className="w-full h-full object-cover" />
+              <img src={outreachImg} alt="CHEIU Community Outreach" loading="lazy" decoding="async" className="w-full h-full object-cover" />
             </motion.div>
           </div>
         </div>

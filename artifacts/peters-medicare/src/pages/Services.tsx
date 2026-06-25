@@ -88,6 +88,8 @@ export function Services() {
                   <img 
                     src={imageMap[section.id]} 
                     alt={section.category} 
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
                   />
                 </div>

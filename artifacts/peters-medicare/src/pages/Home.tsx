@@ -80,6 +80,8 @@ export function Home() {
                 <img 
                   src={heroImg} 
                   alt="Peters Medicare Clinic Interior" 
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </div>
