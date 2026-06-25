@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSEO } from "@/hooks/use-seo";
 import { useLanguage } from "@/context/LanguageContext";
 import { faqItems, faqCategories } from "@/data/faq";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
@@ -10,7 +11,11 @@ export function FAQ() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
 
-  document.title = "FAQ | Peters Medicare Services — Common Questions Answered";
+  useSEO({
+    title: "FAQ | Peters Medicare Services — Common Questions Answered",
+    description: "Answers to common questions about Peters Medicare Services in Kyenjojo, Uganda — fees, opening hours, services, booking, insurance, maternity care, and more.",
+    canonical: "https://medicare-services-hub-1--derickasiimwe84.replit.app/faq",
+  });
 
   const filteredFaqs = faqItems.filter((faq) => {
     const matchesCategory = activeCategory === "all" || faq.category === activeCategory;
