@@ -1,4 +1,5 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "pnpm --filter @workspace/peters-medicare run build",
   "outputDirectory": "artifacts/peters-medicare/dist/public",
   "rewrites": [
