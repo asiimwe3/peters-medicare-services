@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useSEO } from "@/hooks/use-seo";
 import { motion } from "framer-motion";
 import { Heart, Phone, MessageCircle, CheckCircle, Loader2, Users, Baby, FlaskConical, ShieldCheck } from "lucide-react";
 import { useForm } from "react-hook-form";
@@ -46,8 +47,12 @@ export function Donate() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
+  useSEO({
+    title: "Donate | Support Community Health in Kyenjojo Uganda",
+    description: "Help fund free health camps, maternal care, medicines and community outreach at Peters Medicare Services in Kyenjojo, Uganda. Every contribution saves lives.",
+    canonical: "https://medicare-services-hub-1--derickasiimwe84.replit.app/donate",
+  });
   useEffect(() => {
-    document.title = "Donate | Peters Medicare Services — Support Community Health in Uganda";
     window.scrollTo(0, 0);
   }, []);
 
