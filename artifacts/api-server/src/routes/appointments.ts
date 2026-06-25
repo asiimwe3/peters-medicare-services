@@ -38,4 +38,30 @@ router.get("/appointments", async (req, res) => {
   }
 });
 
+router.patch("/appointments/:id/status", async (req, res) => {
+  const id = Number(req.params.id);
+  const { status } = req.body as { status: string };
+  const allowed = ["pending", "confirmed", "cancelled", "completed"];
+  if (!allowed.includes(status)) {
+    res.status(400).json({ error: "invalid_status" });
+    return;
+  }
+  try {
+    const { eq } = await import("drizzle-orm");
+    const [updated] = await db
+      .update(appointmentsTable)
+      .set({ status })
+      .where(eq(appointmentsTable.id, id))
+      .returning();
+    if (!updated) {
+      res.status(404).json({ error: "not_found" });
+      return;
+    }
+    res.json(updated);
+  } catch (err) {
+    req.log.error({ err }, "Failed to update appointment status");
+    res.status(500).json({ error: "server_error" });
+  }
+});
+
 export default router;
