@@ -1,12 +1,14 @@
-import { useEffect } from "react";
+import { useSEO } from "@/hooks/use-seo";
 import { Phone, MessageCircle, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
 export function Pricing() {
-  useEffect(() => {
-    document.title = "Pricing | Peters Medicare Services";
-  }, []);
+  useSEO({
+    title: "Affordable Healthcare Pricing | Peters Medicare Services",
+    description: "Transparent, affordable prices for all services. General consultation from UGX 5,000. Malaria RDT UGX 3,000. Safe delivery UGX 50,000. HIV testing free. Serving Kyenjojo, Uganda.",
+    canonical: "https://medicare-services-hub-1--derickasiimwe84.replit.app/pricing",
+  });
 
   const pricingCategories = [
     {
