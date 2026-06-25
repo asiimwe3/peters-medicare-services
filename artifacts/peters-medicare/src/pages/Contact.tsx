@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useSEO } from "@/hooks/use-seo";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -38,9 +39,11 @@ type FormValues = z.infer<typeof formSchema>;
 export function Contact() {
   const { toast } = useToast();
 
-  useEffect(() => {
-    document.title = "Contact Us | Peters Medicare Services";
-  }, []);
+  useSEO({
+    title: "Contact Us | Peters Medicare Services Kyenjojo",
+    description: "Contact Peters Medicare Services in Kyenjojo, Uganda. Call 0776 004 277, WhatsApp us, or visit us 200m along the Kyenjojo–Kagadi Road. Open Mon–Sat 8 AM–6 PM.",
+    canonical: "https://medicare-services-hub-1--derickasiimwe84.replit.app/contact",
+  });
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
