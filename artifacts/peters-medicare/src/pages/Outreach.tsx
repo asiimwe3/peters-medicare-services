@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useSEO } from "@/hooks/use-seo";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -8,9 +8,11 @@ import outreachHeroImg from "@/assets/images/outreach-hero.png";
 import { OutreachCalendar } from "@/components/sections/OutreachCalendar";
 
 export function Outreach() {
-  useEffect(() => {
-    document.title = "Community Outreach | Peters Medicare Services";
-  }, []);
+  useSEO({
+    title: "Community Health Outreach | Peters Medicare Services Uganda",
+    description: "Free health camps, maternal education, malaria prevention, HIV testing and community screenings across Kyenjojo, Kyegegwa and the Rwenzori region. See our outreach calendar.",
+    canonical: "https://medicare-services-hub-1--derickasiimwe84.replit.app/outreach",
+  });
 
   const focusAreas = [
     { icon: Users, title: "Youth Empowerment", desc: "Equipping young people with health knowledge and life skills." },
