@@ -1,13 +1,15 @@
-import { useEffect } from "react";
+import { useSEO } from "@/hooks/use-seo";
 import { motion } from "framer-motion";
 import { Award, Heart, Shield, TrendingUp, Users } from "lucide-react";
 import outreachImg from "@/assets/images/outreach.png";
 import { Card, CardContent } from "@/components/ui/card";
 
 export function About() {
-  useEffect(() => {
-    document.title = "About Us | Peters Medicare Services — Established 2013";
-  }, []);
+  useSEO({
+    title: "About Us | Peters Medicare Services — Established 2013",
+    description: "Peters Medicare Services has served Kyenjojo and the Rwenzori region since 2013. Learn about our mission, values, and commitment to affordable, patient-centered healthcare in Uganda.",
+    canonical: "https://medicare-services-hub-1--derickasiimwe84.replit.app/about",
+  });
 
   const values = [
     { icon: Shield, title: "Integrity", desc: "Honest, transparent medical practice." },
