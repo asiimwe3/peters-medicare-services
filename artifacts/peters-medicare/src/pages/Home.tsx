@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useSEO } from "@/hooks/use-seo";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Phone, MessageCircle, Clock, MapPin, CheckCircle, ShieldCheck, Stethoscope, HeartPulse, Users, Baby, FlaskConical, Eye } from "lucide-react";
@@ -26,9 +26,11 @@ const stagger = {
 export function Home() {
   const { lang } = useLanguage();
 
-  useEffect(() => {
-    document.title = "Peters Medicare Services | Quality Healthcare in Kyenjojo, Uganda";
-  }, []);
+  useSEO({
+    title: "Peters Medicare Services | Quality Healthcare in Kyenjojo, Uganda",
+    description: "Quality, affordable and patient-centered healthcare in Kyenjojo, Uganda. General medicine, maternal health, lab tests, dental and eye care. Consultation from UGX 5,000. Call 0776 004 277.",
+    canonical: "https://medicare-services-hub-1--derickasiimwe84.replit.app/",
+  });
 
   return (
     <div className="w-full">
