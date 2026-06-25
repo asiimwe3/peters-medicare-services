@@ -98,10 +98,10 @@ export function Navbar() {
               </Link>
             </Button>
             <Button asChild variant="default" className="shadow-sm">
-              <a href="https://wa.me/256776004277" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+              <Link href="/book" data-testid="link-nav-book" className="flex items-center gap-2">
                 <HeartPulse className="w-4 h-4" />
                 {t("nav.book", lang)}
-              </a>
+              </Link>
             </Button>
           </div>
 
@@ -159,9 +159,9 @@ export function Navbar() {
                   </Link>
                 </Button>
                 <Button asChild className="w-full justify-center">
-                  <a href="https://wa.me/256776004277" target="_blank" rel="noopener noreferrer">
+                  <Link href="/book" onClick={() => setIsMobileMenuOpen(false)}>
                     {t("nav.book", lang)}
-                  </a>
+                  </Link>
                 </Button>
               </div>
             </div>
