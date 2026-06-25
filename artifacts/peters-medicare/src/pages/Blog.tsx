@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useSEO } from "@/hooks/use-seo";
 import { Link } from "wouter";
 import { blogPosts } from "@/data/blog-posts";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
@@ -6,9 +6,11 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, ArrowRight } from "lucide-react";
 
 export function Blog() {
-  useEffect(() => {
-    document.title = "Health Tips & News | Peters Medicare Services";
-  }, []);
+  useSEO({
+    title: "Health Tips & News | Peters Medicare Services Uganda",
+    description: "Read health advice, disease prevention guides, and community health news from Peters Medicare Services — your trusted clinic in Kyenjojo, Uganda.",
+    canonical: "https://medicare-services-hub-1--derickasiimwe84.replit.app/blog",
+  });
 
   return (
     <div className="w-full pb-24">
