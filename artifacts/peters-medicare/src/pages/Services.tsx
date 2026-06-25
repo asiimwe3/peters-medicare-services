@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useSEO } from "@/hooks/use-seo";
 import { Link } from "wouter";
 import { services } from "@/data/services";
 import { Button } from "@/components/ui/button";
@@ -27,9 +27,11 @@ const imageMap: Record<string, string> = {
 };
 
 export function Services() {
-  useEffect(() => {
-    document.title = "Services | Peters Medicare Services";
-  }, []);
+  useSEO({
+    title: "Medical Services | Peters Medicare Services Kyenjojo",
+    description: "General medicine, maternal & antenatal care, laboratory diagnostics, dental, eye clinic, HIV testing and more. Affordable healthcare serving Kyenjojo, Kyegegwa, Kibaale and the Rwenzori region.",
+    canonical: "https://medicare-services-hub-1--derickasiimwe84.replit.app/services",
+  });
 
   return (
     <div className="w-full pb-24">
