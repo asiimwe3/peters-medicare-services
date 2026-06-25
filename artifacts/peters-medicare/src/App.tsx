@@ -18,25 +18,33 @@ import { Donate } from "@/pages/Donate";
 import { DonateCallback } from "@/pages/DonateCallback";
 import { FAQ } from "@/pages/FAQ";
 import { Book } from "@/pages/Book";
+import { Admin } from "@/pages/Admin";
 
 const queryClient = new QueryClient();
 
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/services" component={Services} />
-      <Route path="/outreach" component={Outreach} />
-      <Route path="/pricing" component={Pricing} />
-      <Route path="/contact" component={Contact} />
-      <Route path="/blog" component={Blog} />
-      <Route path="/blog/:slug" component={BlogPost} />
-      <Route path="/faq" component={FAQ} />
-      <Route path="/book" component={Book} />
-      <Route path="/donate" component={Donate} />
-      <Route path="/donate/callback" component={DonateCallback} />
-      <Route component={NotFound} />
+      <Route path="/admin" component={Admin} />
+      <Route>
+        <Layout>
+          <Switch>
+            <Route path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/services" component={Services} />
+            <Route path="/outreach" component={Outreach} />
+            <Route path="/pricing" component={Pricing} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/blog" component={Blog} />
+            <Route path="/blog/:slug" component={BlogPost} />
+            <Route path="/faq" component={FAQ} />
+            <Route path="/book" component={Book} />
+            <Route path="/donate" component={Donate} />
+            <Route path="/donate/callback" component={DonateCallback} />
+            <Route component={NotFound} />
+          </Switch>
+        </Layout>
+      </Route>
     </Switch>
   );
 }
@@ -47,9 +55,7 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-            <Layout>
-              <Router />
-            </Layout>
+            <Router />
           </WouterRouter>
           <Toaster />
         </TooltipProvider>
