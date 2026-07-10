@@ -4,28 +4,23 @@ import { X, ZoomIn } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const galleryItems = [
-  { src: new URL("../assets/images/gallery/gal-compound-signage.webp", import.meta.url).href,    label: "Clinic Entrance",       category: "exterior", alt: "Peters Medicare Services entrance with signage" },
-  { src: new URL("../assets/images/gallery/gal-campus-aerial-wide.webp", import.meta.url).href,  label: "Campus Aerial View",    category: "exterior", alt: "Aerial view of Peters Medicare Services campus" },
-  { src: new URL("../assets/images/gallery/gal-facility-aerial.webp", import.meta.url).href,     label: "Facility from Above",   category: "exterior", alt: "Drone aerial view of Peters Medicare Services" },
-  { src: new URL("../assets/images/gallery/gal-compound-overview.webp", import.meta.url).href,   label: "Compound Overview",     category: "exterior", alt: "Overview of Peters Medicare Services compound" },
-  { src: new URL("../assets/images/gallery/gal-outdoor-view.webp", import.meta.url).href,        label: "Clinic Grounds",        category: "exterior", alt: "Outdoor grounds of Peters Medicare Services" },
-  { src: new URL("../assets/images/gallery/gal-lab-equipment.webp", import.meta.url).href,       label: "Laboratory",            category: "clinical", alt: "Laboratory equipment at Peters Medicare Services" },
-  { src: new URL("../assets/images/gallery/gal-ward-corridor.webp", import.meta.url).href,       label: "Ward Corridor",         category: "wards",    alt: "Ward corridor at Peters Medicare Services" },
-  { src: new URL("../assets/images/gallery/gal-staff-clinician.webp", import.meta.url).href,     label: "Clinical Staff",        category: "staff",    alt: "Clinician at work at Peters Medicare Services" },
+  { src: new URL("../assets/images/gallery/gal-compound-signage.webp", import.meta.url).href,   label: "Clinic Entrance",     category: "exterior", alt: "Peters Medicare Services entrance with signage and staff" },
+  { src: new URL("../assets/images/gallery/gal-campus-aerial-wide.webp", import.meta.url).href, label: "Campus Aerial View",  category: "exterior", alt: "Aerial view of Peters Medicare Services campus in Kyenjojo" },
+  { src: new URL("../assets/images/gallery/gal-facility-aerial.webp", import.meta.url).href,    label: "Facility from Above", category: "exterior", alt: "Drone aerial view of Peters Medicare Services compound" },
+  { src: new URL("../assets/images/gallery/gal-compound-overview.webp", import.meta.url).href,  label: "Compound Overview",   category: "exterior", alt: "Overview of Peters Medicare Services compound" },
+  { src: new URL("../assets/images/gallery/gal-staff-clinician.webp", import.meta.url).href,    label: "Clinical Staff",      category: "staff",    alt: "Clinician at work at Peters Medicare Services" },
 ];
 
 const categories = [
   { id: "all",      label: "All Photos" },
-  { id: "exterior", label: "Exterior & Grounds" },
-  { id: "wards",    label: "Wards" },
-  { id: "clinical", label: "Clinical Spaces" },
+  { id: "exterior", label: "Exterior & Compound" },
   { id: "staff",    label: "Our Staff" },
 ];
 
 export function Gallery() {
   useSEO({
     title: "Facility Gallery | Peters Medicare Services Kyenjojo",
-    description: "View photos of Peters Medicare Services — our compound, laboratory, wards, and clinical facilities in Kyenjojo, Uganda.",
+    description: "View photos of Peters Medicare Services — our compound, entrance, aerial views, and clinical staff in Kyenjojo, Uganda.",
     canonical: "https://asiimwe3.github.io/peters-medicare-services/gallery",
   });
 
@@ -39,17 +34,16 @@ export function Gallery() {
 
   return (
     <div className="w-full pb-24">
-      {/* Header */}
       <section className="bg-primary/5 py-16 md:py-20 border-b">
         <div className="container mx-auto px-4 md:px-6 text-center max-w-2xl">
           <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">Our Facilities</h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            A look inside Peters Medicare Services — our compound, wards, laboratory, and the team behind your care.
+            A look at Peters Medicare Services — our compound, entrance, and the team behind your care in Kyenjojo, Uganda.
           </p>
+          <p className="mt-4 text-sm text-muted-foreground italic">More photos coming soon.</p>
         </div>
       </section>
 
-      {/* Filter Tabs */}
       <section className="py-8 border-b bg-card sticky top-0 z-30 shadow-sm">
         <div className="container mx-auto px-4 md:px-6 flex flex-wrap gap-2 justify-center">
           {categories.map(cat => (
@@ -71,10 +65,9 @@ export function Gallery() {
         </div>
       </section>
 
-      {/* Grid */}
       <section className="py-10">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="columns-2 sm:columns-3 lg:columns-4 gap-3 space-y-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <AnimatePresence>
               {filtered.map((item, i) => (
                 <motion.div
@@ -83,8 +76,8 @@ export function Gallery() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.25, delay: i * 0.03 }}
-                  className="relative group break-inside-avoid rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-shadow"
+                  transition={{ duration: 0.25, delay: i * 0.05 }}
+                  className="relative group rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-shadow aspect-video"
                   onClick={() => setLightbox(i)}
                 >
                   <img
@@ -92,7 +85,7 @@ export function Gallery() {
                     alt={item.alt}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-end p-3">
                     <div className="translate-y-4 group-hover:translate-y-0 transition-transform opacity-0 group-hover:opacity-100">
@@ -109,7 +102,6 @@ export function Gallery() {
         </div>
       </section>
 
-      {/* Lightbox */}
       <AnimatePresence>
         {lightbox !== null && (
           <motion.div
@@ -123,7 +115,7 @@ export function Gallery() {
               <X className="w-8 h-8" />
             </button>
             <button
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-4xl font-light z-10 w-12 h-12 flex items-center justify-center"
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-4xl z-10 w-12 h-12 flex items-center justify-center"
               onClick={e => { e.stopPropagation(); prev(); }}
             >‹</button>
             <motion.div
@@ -141,7 +133,7 @@ export function Gallery() {
               <p className="text-white/80 text-sm font-medium">{filtered[lightbox].label}</p>
             </motion.div>
             <button
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-4xl font-light z-10 w-12 h-12 flex items-center justify-center"
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-4xl z-10 w-12 h-12 flex items-center justify-center"
               onClick={e => { e.stopPropagation(); next(); }}
             >›</button>
           </motion.div>
