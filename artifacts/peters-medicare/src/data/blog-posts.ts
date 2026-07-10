@@ -27,7 +27,7 @@ export const blogPosts = [
     excerpt: "Regular antenatal checkups are crucial for a safe pregnancy and delivery. Here is what to expect.",
     date: "April 10, 2024",
     content: "Regular antenatal care is the foundation of a healthy pregnancy and a safe delivery. We encourage all expecting mothers to start their visits as soon as they realize they are pregnant.",
-    imageUrl: "/src/assets/images/blog-antenatal.png",
+    imageUrl: "/src/assets/images/blog-antenatal.webp",
   },
   {
     id: "4",

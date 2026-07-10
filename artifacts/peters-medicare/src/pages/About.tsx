@@ -1,7 +1,10 @@
 import { useSEO } from "@/hooks/use-seo";
 import { motion } from "framer-motion";
-import { Award, Heart, Shield, TrendingUp, Users } from "lucide-react";
+import { Award, Heart, Shield, TrendingUp, Users, MapPin } from "lucide-react";
 import outreachImg from "@/assets/images/outreach.png";
+import campusImg from "@/assets/images/about-campus.webp";
+import theaterImg from "@/assets/images/facility-theater.webp";
+import receptionImg from "@/assets/images/facility-reception.webp";
 import { Card, CardContent } from "@/components/ui/card";
 
 export function About() {
@@ -28,6 +31,19 @@ export function About() {
     { year: "2024", title: "10,000+ Patients", desc: "Celebrating a decade of trusted regional healthcare." },
   ];
 
+  const facilities = [
+    {
+      img: theaterImg,
+      title: "Surgical Theater",
+      desc: "Our fully equipped surgical theater handles minor procedures, circumcisions, and emergency interventions with trained medical staff and sterile protocols.",
+    },
+    {
+      img: receptionImg,
+      title: "Reception & Admin Office",
+      desc: "A well-organised reception equipped with modern computers and digital systems to manage patient records, appointments, and billing efficiently.",
+    },
+  ];
+
   return (
     <div className="w-full">
       {/* Header */}
@@ -42,8 +58,46 @@ export function About() {
         </div>
       </section>
 
+      {/* Campus Photo — Our Location */}
+      <section className="py-16 md:py-20">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-bold mb-6">
+                <MapPin className="w-4 h-4" /> Kyenjojo, Western Uganda
+              </div>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Our Campus</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                Set in the heart of Kyenjojo town, our facility spans a secure, well-maintained compound with dedicated wings for consultation, maternity, surgery, and diagnostics.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                The campus is easily accessible from Kyenjojo, Kyegegwa, Kibaale and the wider Rwenzori region — strategically positioned to serve thousands of families across western Uganda.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="rounded-2xl overflow-hidden shadow-2xl aspect-[16/9]"
+            >
+              <img
+                src={campusImg}
+                alt="Aerial view of Peters Medicare Services campus in Kyenjojo, Uganda"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Vision & Mission */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-muted/30">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
             <Card className="bg-primary text-primary-foreground border-none">
@@ -62,6 +116,43 @@ export function About() {
                 </p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Facilities Gallery */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4 md:px-6">
+          <h2 className="text-3xl font-serif font-bold mb-4 text-center">Our Facilities</h2>
+          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+            Purpose-built spaces designed for patient comfort, clinical safety, and efficient care delivery.
+          </p>
+          <div className="grid md:grid-cols-2 gap-8">
+            {facilities.map((f, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+              >
+                <Card className="overflow-hidden hover-elevate border-muted">
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img
+                      src={f.img}
+                      alt={f.title}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-bold font-serif mb-2">{f.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{f.desc}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
