@@ -45,7 +45,7 @@ export const translations = {
   'status.open': { en: 'Open Now', rn: 'Mufunzibwe Kati' },
   'status.closed': { en: 'Closed', rn: 'Zibwa' },
   'status.emergency': { en: 'Emergency Services Only', rn: 'Obuhwezi bw\'Amabara Bwokka' },
-  'status.hours': { en: 'Mon–Sat: 8AM–6PM | Sunday: Emergency only', rn: 'Orwokubiri–Ow\'omukaga: 8AM–6PM | Sande: Amabara Bwokka' },
+  'status.hours': { en: 'Open 24/7 — Any day, any time', rn: 'Buheesi 24/7 — Buri luniku, buri kiro' },
 };
 
 export function t(key: string, lang: 'en' | 'rn'): string {

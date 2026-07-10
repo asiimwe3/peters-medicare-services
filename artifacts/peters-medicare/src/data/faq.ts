@@ -19,9 +19,9 @@ export const faqItems: FaqItem[] = [
   {
     id: "2",
     category: "general",
-    question: "What are the opening hours?",
+    question: "Are you open 24 hours?",
     questionRn: "Mugala edda wa?",
-    answer: "We are open Monday to Saturday from 8:00 AM to 6:00 PM. On Sundays, emergency services are available. For emergencies outside hours, call 0776 004 277.",
+    answer: "We are open 24 hours a day, 7 days a week — including weekends and public holidays. Walk in any time, or call 0776 004 277.",
     answerRn: "Tufungurwa Orwokubiri okutuka Ow'omukaga okuva 8:00 AM okutuka 6:00 PM. Amasande, obuhwezi bw'amabara bubaho. Kw'amabara ebiri hanze ey'amasaha, turihe 0776 004 277.",
   },
   {

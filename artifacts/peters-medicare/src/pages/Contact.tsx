@@ -41,7 +41,7 @@ export function Contact() {
 
   useSEO({
     title: "Contact Us | Peters Medicare Services Kyenjojo",
-    description: "Contact Peters Medicare Services in Kyenjojo, Uganda. Call 0776 004 277, WhatsApp us, or visit us 200m along the Kyenjojo–Kagadi Road. Open Mon–Sat 8 AM–6 PM.",
+    description: "Contact Peters Medicare Services in Kyenjojo, Uganda. Call 0776 004 277, WhatsApp us, or visit us 200m along the Kyenjojo–Kagadi Road. Open 24/7.",
     canonical: "https://medicare-services-hub-1--derickasiimwe84.replit.app/contact",
   });
 
@@ -125,8 +125,7 @@ export function Contact() {
                   <Clock className="w-6 h-6 text-primary shrink-0" />
                   <div>
                     <h3 className="font-bold text-lg mb-1">Opening Hours</h3>
-                    <p className="text-muted-foreground">Mon–Sat: 8:00 AM – 6:00 PM</p>
-                    <p className="text-destructive font-medium mt-1 text-sm">Sunday: Emergency services only</p>
+                    <p className="text-muted-foreground">Open 24 hours, 7 days a week</p>
                   </div>
                 </CardContent>
               </Card>

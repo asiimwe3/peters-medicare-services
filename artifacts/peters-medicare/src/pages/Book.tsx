@@ -289,12 +289,11 @@ export function Book() {
           >
             <Card className="border shadow-sm" style={{ background: "hsl(17 54% 96%)", borderColor: "hsl(17 54% 88%)" }}>
               <CardContent className="p-6">
-                <h3 className="font-serif font-bold text-lg mb-3" style={{ color: "hsl(17 54% 35%)" }}>Opening Hours</h3>
+                <h3 className="font-serif font-bold text-lg mb-3" style={{ color: "hsl(17 54% 35%)" }}>Hours</h3>
+                <p className="text-sm text-muted-foreground">Open 24/7 — We are always here for you.</p>
                 <ul className="space-y-2 text-sm">
                   {[
-                    ["Mon – Fri", "8:00 AM – 6:00 PM"],
-                    ["Saturday", "8:00 AM – 6:00 PM"],
-                    ["Sunday", "Emergency only"],
+                    ["Every Day", "Open 24 Hours"],
                   ].map(([day, time]) => (
                     <li key={day} className="flex justify-between">
                       <span className="text-muted-foreground">{day}</span>

@@ -74,7 +74,7 @@ export function Home() {
               </motion.div>
 
               <motion.div variants={fadeIn} className="flex gap-8 mt-10 pt-8 border-t" style={{ borderColor: "hsl(38 30% 84%)" }}>
-                {[["10,000+","Patients Served"],["12+","Years of Care"],["Mon–Sat","Open 6 Days"]].map(([v,l]) => (
+                {[["10,000+","Patients Served"],["12+","Years of Care"],["24/7","Always Open"]].map(([v,l]) => (
                   <div key={l}>
                     <p className="font-serif font-bold text-2xl" style={{ color: "hsl(17 54% 50%)" }}>{v}</p>
                     <p className="text-sm mt-0.5" style={{ color: "hsl(26 25% 42%)" }}>{l}</p>
@@ -96,7 +96,7 @@ export function Home() {
 
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { icon: Stethoscope, label: "General Medicine", desc: "All ages, Mon–Sat", bg: "hsl(0 0% 100%)" },
+                  { icon: Stethoscope, label: "General Medicine", desc: "All ages, anytime", bg: "hsl(0 0% 100%)" },
                   { icon: Baby, label: "Maternal & Child", desc: "Prenatal · Vaccines", bg: "hsl(17 54% 96%)" },
                   { icon: FlaskConical, label: "Laboratory", desc: "Rapid results", bg: "hsl(149 47% 94%)" },
                   { icon: Eye, label: "Dental & Eye", desc: "Specialist clinic", bg: "hsl(38 80% 94%)" },
@@ -265,7 +265,7 @@ export function Home() {
               <span className="hidden sm:block text-border">•</span>
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5 text-primary" />
-                <span>Mon–Sat: 8AM – 6PM</span>
+                <span>Open 24/7 — Every day</span>
               </div>
               <span className="hidden sm:block text-border">•</span>
               <div className="flex items-center gap-2">
