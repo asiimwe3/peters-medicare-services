@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+
+Sitemap: https://medicare-services-hub-1--derickasiimwe84.replit.app/sitemap.xml
