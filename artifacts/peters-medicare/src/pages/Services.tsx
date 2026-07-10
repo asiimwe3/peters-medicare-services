@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Stethoscope, Baby, FlaskConical, Activity, Users, ArrowRight } from "lucide-react";
 
-import medImg from "@/assets/images/service-medical.png";
-import matImg from "@/assets/images/service-maternal.png";
-import labImg from "@/assets/images/service-lab.png";
+import medImg from "@/assets/images/service-medical.webp";
+import matImg from "@/assets/images/service-maternal.webp";
+import labImg from "@/assets/images/service-lab.webp";
 import dentImg from "@/assets/images/service-dental.png";
 
 const iconMap: Record<string, any> = {

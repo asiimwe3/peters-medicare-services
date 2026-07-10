@@ -8,7 +8,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { useLanguage } from "@/context/LanguageContext";
 import { t } from "@/data/translations";
 
-import heroImg from "@/assets/images/hero.png";
+import heroImg from "@/assets/images/hero.webp";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },

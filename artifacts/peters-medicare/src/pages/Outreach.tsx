@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { HeartHandshake, BookOpen, BrainCircuit, Users, Baby, Droplet } from "lucide-react";
-import outreachHeroImg from "@/assets/images/outreach-hero.png";
+import outreachHeroImg from "@/assets/images/outreach-hero.webp";
 import { OutreachCalendar } from "@/components/sections/OutreachCalendar";
 
 export function Outreach() {
