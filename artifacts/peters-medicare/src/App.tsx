@@ -19,6 +19,7 @@ import { DonateCallback } from "@/pages/DonateCallback";
 import { FAQ } from "@/pages/FAQ";
 import { Book } from "@/pages/Book";
 import { Admin } from "@/pages/Admin";
+import { Gallery } from "@/pages/Gallery";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ function Router() {
             <Route path="/outreach" component={Outreach} />
             <Route path="/pricing" component={Pricing} />
             <Route path="/contact" component={Contact} />
+            <Route path="/gallery" component={Gallery} />
             <Route path="/blog" component={Blog} />
             <Route path="/blog/:slug" component={BlogPost} />
             <Route path="/faq" component={FAQ} />

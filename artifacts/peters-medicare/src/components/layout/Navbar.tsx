@@ -29,6 +29,7 @@ export function Navbar() {
     { name: t("nav.blog", lang), path: "/blog" },
     { name: "FAQ", path: "/faq" },
     { name: t("nav.contact", lang), path: "/contact" },
+    { name: "Gallery", path: "/gallery" },
   ];
   const isDonate = location === "/donate";
 
