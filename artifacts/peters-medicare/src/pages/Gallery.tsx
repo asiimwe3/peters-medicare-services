@@ -3,35 +3,15 @@ import { useSEO } from "@/hooks/use-seo";
 import { X, ZoomIn } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Gallery images — all 27 real facility photos
 const galleryItems = [
-  { src: new URL("../assets/images/gallery/gal-compound-hero.webp", import.meta.url).href,       label: "Main Compound",        category: "exterior",  alt: "Peters Medicare Services main compound with signage" },
-  { src: new URL("../assets/images/gallery/gal-campus-aerial-wide.webp", import.meta.url).href,  label: "Campus Aerial",        category: "exterior",  alt: "Aerial view of Peters Medicare Services campus" },
-  { src: new URL("../assets/images/gallery/gal-facility-aerial.webp", import.meta.url).href,     label: "Facility from Above",  category: "exterior",  alt: "Aerial drone view of Peters Medicare Services" },
-  { src: new URL("../assets/images/gallery/gal-compound-signage.webp", import.meta.url).href,    label: "Clinic Entrance",      category: "exterior",  alt: "Peters Medicare Services entrance with signage" },
-  { src: new URL("../assets/images/gallery/gal-compound-entrance.webp", import.meta.url).href,   label: "Compound Entrance",    category: "exterior",  alt: "Main entrance compound" },
-  { src: new URL("../assets/images/gallery/gal-exterior-building.webp", import.meta.url).href,   label: "Clinic Building",      category: "exterior",  alt: "Exterior view of Peters Medicare Services building" },
-  { src: new URL("../assets/images/gallery/gal-exterior-side.webp", import.meta.url).href,       label: "Clinic Grounds",       category: "exterior",  alt: "Clinic grounds and garden area" },
-  { src: new URL("../assets/images/gallery/gal-facility-external.webp", import.meta.url).href,   label: "Facility Exterior",    category: "exterior",  alt: "External view of facility" },
-  { src: new URL("../assets/images/gallery/gal-outdoor-area.webp", import.meta.url).href,        label: "Outdoor Grounds",      category: "exterior",  alt: "Outdoor grounds of Peters Medicare Services" },
-  { src: new URL("../assets/images/gallery/gal-clinic-exterior-2.webp", import.meta.url).href,   label: "Building View",        category: "exterior",  alt: "Peters Medicare Services building" },
-  { src: new URL("../assets/images/gallery/gal-outdoor-view.webp", import.meta.url).href,        label: "Clinic Outdoors",      category: "exterior",  alt: "Outdoor clinic area" },
-  { src: new URL("../assets/images/gallery/gal-building-exterior.webp", import.meta.url).href,   label: "Building Exterior",    category: "exterior",  alt: "Building exterior view" },
-  { src: new URL("../assets/images/gallery/gal-outdoor-grounds.webp", import.meta.url).href,     label: "Outdoor Area",         category: "exterior",  alt: "Outdoor grounds" },
-  { src: new URL("../assets/images/gallery/gal-compound-overview.webp", import.meta.url).href,   label: "Compound Overview",    category: "exterior",  alt: "Overview of the compound" },
-  { src: new URL("../assets/images/gallery/gal-maternity-ward.webp", import.meta.url).href,      label: "Maternity Ward",       category: "wards",     alt: "Maternity ward at Peters Medicare Services" },
-  { src: new URL("../assets/images/gallery/gal-ward-corridor.webp", import.meta.url).href,       label: "Ward Corridor",        category: "wards",     alt: "Ward corridor" },
-  { src: new URL("../assets/images/gallery/gal-staff-corridor.webp", import.meta.url).href,      label: "Staff Corridor",       category: "wards",     alt: "Staff and corridor area" },
-  { src: new URL("../assets/images/gallery/gal-ward-beds.webp", import.meta.url).href,           label: "Patient Beds",         category: "wards",     alt: "Patient ward beds" },
-  { src: new URL("../assets/images/gallery/gal-ward-area.webp", import.meta.url).href,           label: "Ward Area",            category: "wards",     alt: "Ward area" },
-  { src: new URL("../assets/images/gallery/gal-patient-consultation.webp", import.meta.url).href,"label": "Consultation Room",   category: "clinical",  alt: "Patient consultation room" },
-  { src: new URL("../assets/images/gallery/gal-lab-equipment.webp", import.meta.url).href,       label: "Laboratory",           category: "clinical",  alt: "Laboratory equipment" },
-  { src: new URL("../assets/images/gallery/gal-reception-desk.webp", import.meta.url).href,      label: "Reception",            category: "clinical",  alt: "Reception desk" },
-  { src: new URL("../assets/images/gallery/gal-consultation-area.webp", import.meta.url).href,   label: "Consultation Area",    category: "clinical",  alt: "Consultation area" },
-  { src: new URL("../assets/images/gallery/gal-facility-room.webp", import.meta.url).href,       label: "Clinical Room",        category: "clinical",  alt: "Clinical room" },
-  { src: new URL("../assets/images/gallery/gal-maternity-patient.webp", import.meta.url).href,   label: "Maternity Care",       category: "clinical",  alt: "Maternity patient care" },
-  { src: new URL("../assets/images/gallery/gal-staff-team.webp", import.meta.url).href,          label: "Medical Team",         category: "staff",     alt: "Peters Medicare medical staff" },
-  { src: new URL("../assets/images/gallery/gal-staff-clinician.webp", import.meta.url).href,     label: "Clinical Staff",       category: "staff",     alt: "Clinician at work" },
+  { src: new URL("../assets/images/gallery/gal-compound-signage.webp", import.meta.url).href,    label: "Clinic Entrance",       category: "exterior", alt: "Peters Medicare Services entrance with signage" },
+  { src: new URL("../assets/images/gallery/gal-campus-aerial-wide.webp", import.meta.url).href,  label: "Campus Aerial View",    category: "exterior", alt: "Aerial view of Peters Medicare Services campus" },
+  { src: new URL("../assets/images/gallery/gal-facility-aerial.webp", import.meta.url).href,     label: "Facility from Above",   category: "exterior", alt: "Drone aerial view of Peters Medicare Services" },
+  { src: new URL("../assets/images/gallery/gal-compound-overview.webp", import.meta.url).href,   label: "Compound Overview",     category: "exterior", alt: "Overview of Peters Medicare Services compound" },
+  { src: new URL("../assets/images/gallery/gal-outdoor-view.webp", import.meta.url).href,        label: "Clinic Grounds",        category: "exterior", alt: "Outdoor grounds of Peters Medicare Services" },
+  { src: new URL("../assets/images/gallery/gal-lab-equipment.webp", import.meta.url).href,       label: "Laboratory",            category: "clinical", alt: "Laboratory equipment at Peters Medicare Services" },
+  { src: new URL("../assets/images/gallery/gal-ward-corridor.webp", import.meta.url).href,       label: "Ward Corridor",         category: "wards",    alt: "Ward corridor at Peters Medicare Services" },
+  { src: new URL("../assets/images/gallery/gal-staff-clinician.webp", import.meta.url).href,     label: "Clinical Staff",        category: "staff",    alt: "Clinician at work at Peters Medicare Services" },
 ];
 
 const categories = [
@@ -45,7 +25,7 @@ const categories = [
 export function Gallery() {
   useSEO({
     title: "Facility Gallery | Peters Medicare Services Kyenjojo",
-    description: "View photos of Peters Medicare Services — our compound, maternity ward, laboratory, consultation rooms, staff, and clinical facilities in Kyenjojo, Uganda.",
+    description: "View photos of Peters Medicare Services — our compound, laboratory, wards, and clinical facilities in Kyenjojo, Uganda.",
     canonical: "https://asiimwe3.github.io/peters-medicare-services/gallery",
   });
 
@@ -64,7 +44,7 @@ export function Gallery() {
         <div className="container mx-auto px-4 md:px-6 text-center max-w-2xl">
           <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">Our Facilities</h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            A look inside Peters Medicare Services — from our compound and wards to our clinical spaces and the team behind your care.
+            A look inside Peters Medicare Services — our compound, wards, laboratory, and the team behind your care.
           </p>
         </div>
       </section>
@@ -103,7 +83,7 @@ export function Gallery() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.25, delay: i * 0.02 }}
+                  transition={{ duration: 0.25, delay: i * 0.03 }}
                   className="relative group break-inside-avoid rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-shadow"
                   onClick={() => setLightbox(i)}
                 >
@@ -139,10 +119,7 @@ export function Gallery() {
             className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
             onClick={() => setLightbox(null)}
           >
-            <button
-              className="absolute top-4 right-4 text-white/70 hover:text-white z-10"
-              onClick={() => setLightbox(null)}
-            >
+            <button className="absolute top-4 right-4 text-white/70 hover:text-white z-10" onClick={() => setLightbox(null)}>
               <X className="w-8 h-8" />
             </button>
             <button
