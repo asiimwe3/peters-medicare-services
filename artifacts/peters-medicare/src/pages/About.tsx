@@ -6,6 +6,7 @@ import campusImg from "@/assets/images/about-campus.webp";
 import theaterImg from "@/assets/images/facility-theater.webp";
 import receptionImg from "@/assets/images/facility-reception.webp";
 import { Card, CardContent } from "@/components/ui/card";
+import staffImg from "@/assets/images/staff-clinician.webp";
 
 export function About() {
   useSEO({
@@ -209,6 +210,58 @@ export function About() {
               className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]"
             >
               <img src={outreachImg} alt="CHEIU Community Outreach" loading="lazy" decoding="async" className="w-full h-full object-cover" />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* Team Section */}
+      <section className="py-16 md:py-24 bg-muted/30">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <h2 className="text-3xl font-serif font-bold mb-4">Our People</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Behind every patient outcome is a dedicated team of trained clinicians, nurses, and support staff who show up every day with professionalism and heart.
+            </p>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/5]"
+            >
+              <img
+                src={staffImg}
+                alt="Peters Medicare clinical staff working at the computer station"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-serif font-bold mb-4">Skilled. Committed. Community-Focused.</h3>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Our clinical team includes qualified doctors, registered nurses, certified midwives, laboratory technicians, and community health workers — all united by a shared mission of serving western Uganda.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { stat: "13+", label: "Years of Service" },
+                  { stat: "10,000+", label: "Patients Served" },
+                  { stat: "24/7", label: "Emergency Response" },
+                  { stat: "50+", label: "Schools Outreached" },
+                ].map((item, i) => (
+                  <div key={i} className="bg-card border border-muted rounded-xl p-5 text-center">
+                    <p className="text-2xl font-bold font-serif text-primary mb-1">{item.stat}</p>
+                    <p className="text-sm text-muted-foreground">{item.label}</p>
+                  </div>
+                ))}
+              </div>
             </motion.div>
           </div>
         </div>
