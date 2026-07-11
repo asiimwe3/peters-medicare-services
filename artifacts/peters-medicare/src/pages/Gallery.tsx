@@ -28,6 +28,12 @@ const galleryItems = [
     category: "clinical",
     alt: "Dental treatment chair and equipment at Peters Medicare Services"
   },
+  {
+    src: new URL("../assets/images/gallery/gal-oxygen-cylinders.webp", import.meta.url).href,
+    label: "Medical Oxygen Supply",
+    category: "clinical",
+    alt: "Medical oxygen cylinders at Peters Medicare Services"
+  },
 ];
 
 const categories = [
