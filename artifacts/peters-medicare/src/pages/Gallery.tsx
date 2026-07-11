@@ -5,6 +5,12 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const galleryItems = [
   {
+    src: new URL("../assets/images/gallery/gal-compound-aerial.webp", import.meta.url).href,
+    label: "Facility Compound",
+    category: "exterior",
+    alt: "Aerial view of Peters Medicare Services compound in Kyenjojo, Uganda"
+  },
+  {
     src: new URL("../assets/images/gallery/gal-theater-lamp.webp", import.meta.url).href,
     label: "Surgical Theater Lamp",
     category: "clinical",
@@ -50,6 +56,7 @@ const galleryItems = [
 
 const categories = [
   { id: "all",      label: "All Photos" },
+  { id: "exterior", label: "Compound" },
   { id: "clinical", label: "Theater" },
   { id: "wards",    label: "Wards" },
   { id: "maternity", label: "Maternity" },
