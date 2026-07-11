@@ -40,6 +40,12 @@ const galleryItems = [
     category: "reception",
     alt: "Patients waiting at Peters Medicare Services clinic"
   },
+  {
+    src: new URL("../assets/images/gallery/gal-staff-desk.webp", import.meta.url).href,
+    label: "Clinical Staff at Work",
+    category: "staff",
+    alt: "Peters Medicare Services clinician working at her desk"
+  },
 ];
 
 const categories = [
@@ -49,6 +55,7 @@ const categories = [
   { id: "maternity", label: "Maternity" },
   { id: "dental",    label: "Dental" },
   { id: "reception", label: "Reception" },
+  { id: "staff",     label: "Our Team" },
 ];
 
 export function Gallery() {
