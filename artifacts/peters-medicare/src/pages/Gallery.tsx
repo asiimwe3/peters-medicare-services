@@ -6,15 +6,22 @@ import { motion, AnimatePresence } from "framer-motion";
 const galleryItems = [
   {
     src: new URL("../assets/images/gallery/gal-theater-lamp.webp", import.meta.url).href,
-    label: "Surgical Theater",
+    label: "Surgical Theater Lamp",
     category: "clinical",
     alt: "Surgical theater lamp at Peters Medicare Services"
+  },
+  {
+    src: new URL("../assets/images/gallery/gal-ward-equipment.webp", import.meta.url).href,
+    label: "Ward Medical Equipment",
+    category: "wards",
+    alt: "Mindray medical equipment and patient bed at Peters Medicare Services"
   },
 ];
 
 const categories = [
   { id: "all",      label: "All Photos" },
-  { id: "clinical", label: "Clinical Spaces" },
+  { id: "clinical", label: "Theater" },
+  { id: "wards",    label: "Wards" },
 ];
 
 export function Gallery() {
