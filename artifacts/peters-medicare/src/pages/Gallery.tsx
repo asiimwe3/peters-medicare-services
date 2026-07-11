@@ -16,12 +16,19 @@ const galleryItems = [
     category: "wards",
     alt: "Mindray medical equipment and patient bed at Peters Medicare Services"
   },
+  {
+    src: new URL("../assets/images/gallery/gal-maternity-ward.webp", import.meta.url).href,
+    label: "Maternity Ward",
+    category: "maternity",
+    alt: "Maternity ward beds with baby cot at Peters Medicare Services"
+  },
 ];
 
 const categories = [
   { id: "all",      label: "All Photos" },
   { id: "clinical", label: "Theater" },
   { id: "wards",    label: "Wards" },
+  { id: "maternity", label: "Maternity" },
 ];
 
 export function Gallery() {
