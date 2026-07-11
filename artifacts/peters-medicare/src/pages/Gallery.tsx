@@ -22,6 +22,12 @@ const galleryItems = [
     category: "maternity",
     alt: "Maternity ward beds with baby cot at Peters Medicare Services"
   },
+  {
+    src: new URL("../assets/images/gallery/gal-dental-clinic.webp", import.meta.url).href,
+    label: "Dental Clinic",
+    category: "clinical",
+    alt: "Dental treatment chair and equipment at Peters Medicare Services"
+  },
 ];
 
 const categories = [
@@ -29,6 +35,7 @@ const categories = [
   { id: "clinical", label: "Theater" },
   { id: "wards",    label: "Wards" },
   { id: "maternity", label: "Maternity" },
+  { id: "dental",    label: "Dental" },
 ];
 
 export function Gallery() {
