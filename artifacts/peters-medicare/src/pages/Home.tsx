@@ -251,6 +251,44 @@ export function Home() {
         </div>
       </section>
 
+
+      {/* ── Gallery Preview ──────────────────────────────── */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-12">
+            <h2 className="font-serif font-bold text-3xl md:text-4xl mb-3">Our Facilities</h2>
+            <p className="text-muted-foreground text-lg max-w-xl mx-auto">A glimpse inside Peters Medicare Services — real spaces, real care.</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {[
+              { src: new URL("../assets/images/gallery/gal-compound-aerial.webp", import.meta.url).href, label: "Facility Compound" },
+              { src: new URL("../assets/images/gallery/gal-maternity-ward.webp", import.meta.url).href, label: "Maternity Ward" },
+              { src: new URL("../assets/images/gallery/gal-dental-clinic.webp", import.meta.url).href, label: "Dental Clinic" },
+              { src: new URL("../assets/images/gallery/gal-waiting-area.webp", import.meta.url).href, label: "Waiting Area" },
+              { src: new URL("../assets/images/gallery/gal-theater-lamp.webp", import.meta.url).href, label: "Surgical Theater" },
+              { src: new URL("../assets/images/gallery/gal-ward-equipment.webp", import.meta.url).href, label: "Ward Equipment" },
+              { src: new URL("../assets/images/gallery/gal-oxygen-cylinders.webp", import.meta.url).href, label: "Oxygen Supply" },
+              { src: new URL("../assets/images/gallery/gal-staff-desk.webp", import.meta.url).href, label: "Clinical Staff" },
+            ].map((item, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }} transition={{ delay: i * 0.07, duration: 0.4 }}
+                className="relative group rounded-xl overflow-hidden aspect-square shadow-sm hover:shadow-lg transition-shadow">
+                <img src={item.src} alt={item.label} loading="lazy" decoding="async"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-end p-2">
+                  <span className="text-white text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity drop-shadow">{item.label}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link href="/gallery">
+              <Button variant="outline" size="lg" className="rounded-full px-8">View Full Gallery</Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA ──────────────────────────────────────────── */}
       <section className="py-20 bg-card border-t">
         <div className="container mx-auto px-4 md:px-6">
