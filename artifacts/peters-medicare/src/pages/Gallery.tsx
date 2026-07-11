@@ -34,6 +34,12 @@ const galleryItems = [
     category: "clinical",
     alt: "Medical oxygen cylinders at Peters Medicare Services"
   },
+  {
+    src: new URL("../assets/images/gallery/gal-waiting-area.webp", import.meta.url).href,
+    label: "Patient Waiting Area",
+    category: "reception",
+    alt: "Patients waiting at Peters Medicare Services clinic"
+  },
 ];
 
 const categories = [
@@ -42,6 +48,7 @@ const categories = [
   { id: "wards",    label: "Wards" },
   { id: "maternity", label: "Maternity" },
   { id: "dental",    label: "Dental" },
+  { id: "reception", label: "Reception" },
 ];
 
 export function Gallery() {
