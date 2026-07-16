@@ -8,7 +8,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { useLanguage } from "@/context/LanguageContext";
 import { t } from "@/data/translations";
 
-import heroImg from "@/assets/images/hero.webp";
+import { HeroSlider } from "@/components/sections/HeroSlider";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -90,9 +90,7 @@ export function Home() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="flex flex-col gap-4"
             >
-              <div className="aspect-[16/9] rounded-2xl overflow-hidden shadow-xl mb-2">
-                <img src={heroImg} alt="Peters Medicare Clinic" loading="lazy" decoding="async" className="w-full h-full object-cover" />
-              </div>
+              <HeroSlider />
 
               <div className="grid grid-cols-2 gap-4">
                 {[
