@@ -1,97 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://medicare-services-hub-1--derickasiimwe84.replit.app/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <loc>https://petersmedicare.online/</loc>
+    <lastmod>2026-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://medicare-services-hub-1--derickasiimwe84.replit.app/"/>
   </url>
-
   <url>
-    <loc>https://medicare-services-hub-1--derickasiimwe84.replit.app/about</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://medicare-services-hub-1--derickasiimwe84.replit.app/services</loc>
-    <lastmod>2026-06-25</lastmod>
+    <loc>https://petersmedicare.online/services</loc>
+    <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://medicare-services-hub-1--derickasiimwe84.replit.app/pricing</loc>
-    <lastmod>2026-06-25</lastmod>
+    <loc>https://petersmedicare.online/about</loc>
+    <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://medicare-services-hub-1--derickasiimwe84.replit.app/outreach</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://medicare-services-hub-1--derickasiimwe84.replit.app/blog</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://petersmedicare.online/contact</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://medicare-services-hub-1--derickasiimwe84.replit.app/blog/malaria-prevention-kyenjojo</loc>
-    <lastmod>2026-06-25</lastmod>
+    <loc>https://petersmedicare.online/faq</loc>
+    <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <url>
-    <loc>https://medicare-services-hub-1--derickasiimwe84.replit.app/blog/antenatal-care-guide</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://medicare-services-hub-1--derickasiimwe84.replit.app/blog/community-health-outreach</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://medicare-services-hub-1--derickasiimwe84.replit.app/faq</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://medicare-services-hub-1--derickasiimwe84.replit.app/book</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://medicare-services-hub-1--derickasiimwe84.replit.app/donate</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://medicare-services-hub-1--derickasiimwe84.replit.app/contact</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
 </urlset>
