@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Layout } from "@/components/layout/Layout";
 import NotFound from "@/pages/not-found";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { DeryCodeAd } from "@/components/DeryCodeAd";
 
 import { Home } from "@/pages/Home";
 import { About } from "@/pages/About";
@@ -45,6 +46,7 @@ function Router() {
             <Route path="/donate/callback" component={DonateCallback} />
             <Route component={NotFound} />
           </Switch>
+        <DeryCodeAd />
         </Layout>
       </Route>
     </Switch>
