@@ -91,6 +91,22 @@ export function Footer() {
           </div>
         </div>
       </div>
+
+        <div className="mt-6 pt-6 border-t flex justify-center">
+          <a href="https://derycode.publicvm.com" target="_blank" rel="noopener noreferrer" 
+             className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-gradient-to-r from-slate-900 to-slate-800 border border-amber-700/30 hover:border-amber-600/50 transition-all group">
+            <img src="https://derycode.publicvm.com/logo.webp" alt="DeryCode" loading="lazy" 
+                 className="w-5 h-5 rounded" />
+            <span className="font-bold text-sm tracking-wide">
+              <span className="text-amber-500">Dery</span><span className="text-emerald-400">Code</span>
+            </span>
+            <span className="text-muted-foreground text-xs">·</span>
+            <span className="text-muted-foreground text-xs group-hover:text-foreground transition-colors">
+              Software, Blockchain, AI &amp; Web3 in Uganda
+            </span>
+          </a>
+        </div>
+      </div>
     </footer>
   );
 }
